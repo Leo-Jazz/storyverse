@@ -1,3 +1,4 @@
+/* General styles */
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
@@ -18,14 +19,11 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Typography */
 h1 {
   margin-top: 30px;
   margin-bottom: 10px;
   color: var(--green);
-}
-
-p {
-  margin-bottom: 20px;
 }
 
 h3 {
@@ -33,10 +31,21 @@ h3 {
   color: var(--rosa);
 }
 
+p {
+  margin-bottom: 20px;
+}
+
+/* Containers */
 .container {
   margin: 0 auto;
   max-width: 960px;
   padding: 0 20px;
+}
+
+.container-read {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .title-container {
@@ -44,7 +53,7 @@ h3 {
   margin-bottom: 20px;
 }
 
-/* Handle input Method at Write Story page */
+/* Input method styles for Write Story page */
 .input-method-container {
   display: flex;
   flex-direction: column;
@@ -87,6 +96,7 @@ input[type="radio"]:checked + label {
   background-color: var(--light_gray);
 }
 
+/* Form styles */
 form {
   width: 100%;
 }
@@ -115,49 +125,32 @@ form button {
   margin-bottom: 20px;
 }
 
-/* Responsive styles */
-@media (min-width: 768px) {
-  .input-method-container {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  .input-method {
-    flex: 1;
-    max-width: 45%;
-    margin: 0 10px;
-    
-  }
-}
-
-.container-read {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+/* Story list and content */
 .story-list {
   flex: 1;
   border-right: 1px solid #ccc;
   padding-right: 1rem;
   margin-right: 1rem;
 }
+
 .story-content {
   flex: 2;
 }
+
+/* Image styles */
 img {
   max-width: 100%;
   height: auto;
 }
+
 .story-title {
   cursor: pointer;
   text-decoration: underline;
   color: var(--green);
 }
 
+/* Buttons and navigation */
 .buttons-container {
-  /* background-color: var#f6f8fc; */
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -215,6 +208,22 @@ img {
   margin-bottom: 10px;
 }
 
+/* Responsive styles */
+@media (min-width: 768px) {
+  .input-method-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .input-method {
+    flex: 1;
+    max-width: 45%;
+    margin: 0 10px;
+  }
+}
+
 @media (max-width: 767px) {
   .ql-toolbar .ql-bold,
   .ql-toolbar .ql-italic,
@@ -238,14 +247,13 @@ img {
   }
 }
 
-/* Center the logo */
+/* Header styles */
 header {
   text-align: center;
   margin-bottom: 30px;
 }
 
-/* Equalize the look and feel of the 3 pages */
-/* Update button styles */
+/* Button styles */
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -254,52 +262,54 @@ header {
   text-decoration: none;
   border-radius: 4px;
   font-size: 16px;
-  font-weight: bold; /* Add bold weight */
-  border: 2px solid var(--blue); /* Add a border */
+  font-weight: bold;
+  border: 2px solid var(--blue);
 }
 
 .button:hover {
   background-color: var(--darker_blue);
-  border-color: var(--darker_blue); /* Update the border color on hover */
+  border-color: var(--darker_blue);
 }
 
+/* Navigation styles */
 .nav-container {
   display: flex;
-  justify-content: flex-end; /* Change to flex-start */
+  justify-content: flex-end;
   margin-bottom: 20px;
-  font-size: 0.9rem; /* Smaller font size */
-  padding-left: 1rem; /* Add some padding to align with the logo */
+  font-size: 0.9rem;
+  padding-left: 1rem;
   align-items: center;
 }
 
 .nav-container a {
   text-decoration: none;
   color: var(--blue);
-  font-size: 1rem; /* Smaller font size */
-  margin-right: 1.2rem; /* Adjust space between links */
+  font-size: 1rem;
+  margin-right: 1.2rem;
 }
 
 .nav-container a:hover {
   color: var(--blue);
 }
 
+/* Form success and error messages */
 .form-success,
 .form-error {
-    border-radius: 4px;
-    padding: 10px;
-    margin: 10px 0;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
 .form-success {
-    background-color: #dff0d8;
-    border: 1px solid #d6e9c6;
-    color: #3c763d;
+  background-color: #dff0d8;
+  border: 1px solid #d6e9c6;
+  color: #3c763d;
 }
 
 .form-error {
-    background-color: #f2dede;
-    border: 1px solid #ebccd1;
-    color: #a94442;
+  background-color: #f2dede;
+  border: 1px solid #ebccd1;
+  color: #a94442;
 }
 
 /* Hamburger menu styles */
@@ -365,6 +375,7 @@ header {
   }
 }
 
+/* Like button and comment section styles */
 .like-button-container {
   display: flex;
   align-items: center;
@@ -419,4 +430,3 @@ header {
 .hidden {
   display: none;
 }
-
