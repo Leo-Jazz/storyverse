@@ -313,6 +313,10 @@ header {
 }
 
 /* Hamburger menu styles */
+#menu-toggle {
+  display: none;
+}
+
 .menu-icon {
   display: none;
   padding: 10px;
