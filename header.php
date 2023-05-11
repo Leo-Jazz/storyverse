@@ -19,9 +19,12 @@
     <!-- Header and navigation -->
     <header>
         <nav>
+            <!-- Hamburger menu icon -->
+            <label for="menu-toggle" class="menu-icon"><span class="fas fa-bars"></span></label>
+
             <!-- Menu toggle checkbox -->
             <input type="checkbox" id="menu-toggle">
-            
+
             <!-- Navigation container -->
             <div class="nav-container">
                 <a href="index.php">Home</a>
@@ -29,31 +32,35 @@
                 <a href="read_story.php">Read Stories</a>
                 <a href="about.php">About</a>
                 <a href="contact.php">Contact</a>
-                
-                <!-- Hamburger menu icon -->
-                <label for="menu-toggle" class="menu-icon">&#9776;</label>
             </div>
         </nav>
     </header>
+
 
     <!-- JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.getElementById('menu-toggle');
             const navContainer = document.querySelector('.nav-container');
+            const menuIcon = document.querySelector('.menu-icon');
 
             menuToggle.addEventListener('change', function () {
                 if (menuToggle.checked) {
-                    navContainer.style.display = 'flex';
-                    navContainer.style.flexDirection = 'column';
-                    navContainer.style.alignItems = 'center';
-                    navContainer.style.width = '100%';
-                    navContainer.style.backgroundColor = '#f6f8fc';
+                    navContainer.classList.add('mobile-nav-active');
                 } else {
-                    navContainer.style.display = 'none';
+                    navContainer.classList.remove('mobile-nav-active');
+                }
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 767) {
+                    navContainer.classList.remove('mobile-nav-active');
+                    menuToggle.checked = false;
                 }
             });
         });
     </script>
+
+
 </body>
 </html>

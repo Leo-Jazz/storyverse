@@ -1,25 +1,53 @@
-# storyverse
-Web platform for reading, writing and sharing stories for kids
+# Storyverse
 
-The platfomr is called Storyverse and has the objective to help people write, share and read stories for kids. It has basically two main parts, one feature to write your stories and one for reading the stories submitted.
+Storyverse is a web platform designed to facilitate reading, writing, and sharing of stories for kids. It provides users with two main features: the ability to write stories and the option to explore and read stories submitted by others.
 
-To write stories, we have two different input methods, a freely entry method and a simple storytelling framework method to help shape the story.
+## Features
 
-/
-index.php
-about.php
-contact.php
-header.php (contain the navigation menu the is displayed in all pages)
-read_story.php (HTML code for the Red Story page - it allows users to select the story, read it and intereact trough commenting and liking. Very similar to a blog page)
-write_story.php (HTML file for the Write Sotry page - where users can add their own stories to be shared in the platform)
-styles.css (CSS styles)
-read_story_script_js (Java Script handling front end for Red Story Page)
-write_story_js (Java Script handling front end for Write Story Page)
-db_connection.php (PHP code with SQL data base connection)
-get_story.php (PHP file to fetch stories from data base to be displayed on Read Story)
-send_contact.php (PHP file to handle form submission fro Contact page)
-submit_comments.php (PHP file to handle comments and likes at Read Story, to be able to record them in or data base)
-submit_story.php (PHP file to handle Write Story page, recording form inputs on our data base)
-versions.json (Version files to help browsers to update scripts and styles without clearing cash all times)
-langauges.json (List of languages and codes used on our select language button in Write Story)
-/images/ (folder with all images used in the project)
+- **Write Stories**: Storyverse offers two different methods for writing stories. Users can either freely enter their stories or use a simple storytelling framework to shape their narratives.
+
+- **Read Stories**: Users can access a dedicated page, similar to a blog, where they can select stories, read them, and interact by leaving comments and liking the stories.
+
+## Project Structure
+
+The Storyverse project consists of the following files and folders:
+
+- `index.php`: Main entry point for the web application.
+- `about.php`: Page providing information about Storyverse.
+- `contact.php`: Page allowing users to get in touch with the project team.
+- `header.php`: Common header file containing the navigation menu displayed on all pages.
+- `read_story.php`: HTML code for the Read Story page, where users can select and read stories, as well as interact through comments and likes.
+- `write_story.php`: HTML file for the Write Story page, where users can contribute their own stories to be shared on the platform.
+- `styles.css`: CSS file containing the styles used throughout the web application.
+- `read_story_script.js`: JavaScript file handling the front-end functionality for the Read Story page.
+- `write_story.js`: JavaScript file handling the front-end functionality for the Write Story page.
+- `db_connection.php`: PHP code responsible for establishing the connection with the SQL database.
+- `get_story.php`: PHP file used to fetch stories from the database and display them on the Read Story page.
+- `send_contact.php`: PHP file for handling form submissions from the Contact page.
+- `submit_comments.php`: PHP file for handling comments and likes on the Read Story page and recording them in the database.
+- `submit_story.php`: PHP file for handling submissions from the Write Story page and recording form inputs in the database.
+- `versions.json`: Version file used to help browsers update scripts and styles without clearing the cache every time.
+- `languages.json`: JSON file containing a list of languages and codes used in the select language button on the Write Story page.
+- `/images/`: Folder containing all the images used in the project.
+
+## Getting Started
+
+To run the Storyverse project locally, follow these steps:
+
+1. Clone the repository: `git clone https://github.com/Leo-Jazz/storyverse.git`
+2. Set up the required dependencies and configurations.
+3. Launch the web application by opening `index.php` in your web browser.
+
+## Contributing
+
+Contributions to Storyverse are welcome! If you'd like to contribute, please follow the guidelines outlined in [CONTRIBUTING.md](link-to-contributing-file).
+
+## License
+
+Storyverse is released under the [MIT License](https://github.com/Leo-Jazz/storyverse/blob/main/LICENSE). Please refer to the LICENSE file for more details.
+
+## Contact
+
+If you have any questions, suggestions, or feedback, feel free to reach out to us at victorazzi@gmail.com.
+
+---
