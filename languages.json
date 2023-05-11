@@ -1,0 +1,99 @@
+[
+    {
+      "name": "English",
+      "code": "en"
+    },
+    {
+      "name": "Portuguese (Br)",
+      "code": "pt-BR"
+    },
+    {
+      "name": "Portuguese (Pt)",
+      "code": "pt-PT"
+    },
+    {
+      "name": "Spanish",
+      "code": "es"
+    },
+    {
+      "name": "French",
+      "code": "fr"
+    },
+    {
+      "name": "German",
+      "code": "de"
+    },
+    {
+      "name": "Italian",
+      "code": "it"
+    },
+    {
+      "name": "Dutch",
+      "code": "nl"
+    },
+    {
+      "name": "Russian",
+      "code": "ru"
+    },
+    {
+      "name": "Mandarin Chinese",
+      "code": "zh"
+    },
+    {
+      "name": "Japanese",
+      "code": "ja"
+    },
+    {
+      "name": "Korean",
+      "code": "ko"
+    },
+    {
+      "name": "Arabic",
+      "code": "ar"
+    },
+    {
+      "name": "Hindi",
+      "code": "hi"
+    },
+    {
+      "name": "Bengali",
+      "code": "bn"
+    },
+    {
+      "name": "Punjabi",
+      "code": "pa"
+    },
+    {
+      "name": "Javanese",
+      "code": "jv"
+    },
+    {
+      "name": "Turkish",
+      "code": "tr"
+    },
+    {
+      "name": "Vietnamese",
+      "code": "vi"
+    },
+    {
+      "name": "Telugu",
+      "code": "te"
+    },
+    {
+      "name": "Marathi",
+      "code": "mr"
+    },
+    {
+      "name": "Tamil",
+      "code": "ta"
+    },
+    {
+      "name": "Urdu",
+      "code": "ur"
+    },
+    {
+      "name": "Other",
+      "code": "other"
+    }
+  ]
+  
