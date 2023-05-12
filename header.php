@@ -18,48 +18,34 @@
 <body>
     <!-- Header and navigation -->
     <header>
-        <nav>
+    <nav>
+        <!-- Menu toggle checkbox -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <!-- Navigation container -->
+        <div class="nav-container">
+            <a href="index.php">Home</a>
+            <a href="write_story.php">Write Your Story</a>
+            <a href="read_story.php">Read Stories</a>
+            <a href="about.php">About</a>
+            <a href="contact.php">Contact</a>
+            
             <!-- Hamburger menu icon -->
-            <label for="menu-toggle" class="menu-icon"><span class="fas fa-bars"></span></label>
+            <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
+        </div>
+    </nav>
+</header>
 
-            <!-- Menu toggle checkbox -->
-            <input type="checkbox" id="menu-toggle">
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const menuIcon = document.getElementById('menu-icon');
+        const navContainer = document.querySelector('.nav-container');
 
-            <!-- Navigation container -->
-            <div class="nav-container">
-                <a href="index.php">Home</a>
-                <a href="write_story.php">Write Your Story</a>
-                <a href="read_story.php">Read Stories</a>
-                <a href="about.php">About</a>
-                <a href="contact.php">Contact</a>
-            </div>
-        </nav>
-    </header>
-
-
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const menuToggle = document.getElementById('menu-toggle');
-            const navContainer = document.querySelector('.nav-container');
-            const menuIcon = document.querySelector('.menu-icon');
-
-            menuToggle.addEventListener('change', function () {
-                if (menuToggle.checked) {
-                    navContainer.classList.add('mobile-nav-active');
-                } else {
-                    navContainer.classList.remove('mobile-nav-active');
-                }
-            });
-
-            window.addEventListener('resize', function () {
-                if (window.innerWidth > 767) {
-                    navContainer.classList.remove('mobile-nav-active');
-                    menuToggle.checked = false;
-                }
-            });
+        menuIcon.addEventListener('click', function () {
+            navContainer.classList.toggle('mobile-nav-active');
         });
-    </script>
+    });
+</script>
 
 
 </body>
