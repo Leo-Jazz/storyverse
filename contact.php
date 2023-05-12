@@ -11,7 +11,6 @@ $versions = json_decode(file_get_contents('versions.json'), true);
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3MY8P0HHH2');
 </script>
 
@@ -34,19 +33,24 @@ $versions = json_decode(file_get_contents('versions.json'), true);
             <p>We'd love to hear from you! Whether you have questions, concerns, or just want to share your thoughts, don't hesitate to reach out. Fill out the contact form below, and our team will get back to you as soon as possible.</p>
 
             <form action="send_contact.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" name="name" id="name" required>
-
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" required>
-
-                <label for="message">Message:</label>
-                <textarea name="message" id="message" rows="5" required></textarea>
-
-                <input type="submit" value="Submit" class="button">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div>
+                    <label for="message">Message:</label>
+                    <textarea name="message" id="message" rows="5" required style="width: 100%; padding: 5px;"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="button">Submit</button>
+                </div>
             </form>
         </section>
-        <section class="contact-form">
+        <section>
             <?php
             if (isset($_GET['success'])) {
                 if ($_GET['success'] === 'true') {
@@ -56,7 +60,6 @@ $versions = json_decode(file_get_contents('versions.json'), true);
                 }
             }
             ?>
-            <!-- Rest of the form -->
         </section>
 
     </main>

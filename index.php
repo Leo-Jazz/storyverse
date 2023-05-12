@@ -5,8 +5,8 @@ $versions = json_decode(file_get_contents('versions.json'), true);
 // Include the database connection file.
 require_once "db_connection.php";
 
-// Fetch 3 stories from the database to be featured.
-$sql = "SELECT * FROM stories LIMIT 3";
+// Fetch 3 stories from the database with the most likes to be featured.
+$sql = "SELECT * FROM stories ORDER BY likes DESC LIMIT 3";
 $result = $conn->query($sql);
 $featured_stories = [];
 
