@@ -49,7 +49,7 @@ if ($result->num_rows > 0) {
         <!-- Display the Storyverse logo and introductory content -->
         <img src="images/storyverse-logo.png" alt="Storyverse Logo" id="logo">
         <h1 class="subtitle">Unleash Your Creativity in the World of Stories</h1>
-        <p class="description">Welcome to Storyverse, a platform where parents, uncles, teachers, and even kids themselves can share their stories! Dive into a world of imagination and adventure, or create your own stories and bring them to life. Join our community, and let's make storytelling more fun and accessible for everyone.</p>
+        <p class="description">Welcome to Storyverse, a platform where parents, uncles, teachers, and kids themselves can share their stories! Dive into a world of imagination and adventure, or create your own stories and bring them to life. Join our community, and let's make storytelling more fun and accessible for everyone.</p>
     </header>
 
     <!-- Navigation buttons -->

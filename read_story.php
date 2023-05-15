@@ -27,7 +27,7 @@ $result = $conn->query($sql);
  
   <link rel="stylesheet" href="styles.css?v=<?= $versions['styles'] ?>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gs'tatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
 
   <script src="read_story_script.js?v=<?= $versions['scripts'] ?>"></script>
@@ -47,7 +47,10 @@ $result = $conn->query($sql);
           $id = $row['id'];
           $story_name = $row['story_name'];
           $author_name = $row['author_name'];
-          echo "<p class=\"story-title\" data-id=\"$id\">$story_name by $author_name</p>";
+          $story_language = $row['story_language'];
+          $translation_language = $row['translation_language'];
+                    
+          echo "<p class=\"story-title\" data-id=\"$id\">$story_name by $author_name ($story_language / $translation_language)</p>";
         }
       } else {
         echo "<p>No stories found.</p>";
@@ -55,9 +58,11 @@ $result = $conn->query($sql);
       ?>
     </div>
     <div class="story-content">
-    
+      <label for="language-switcher">Switch Language:</label>
+      <button id="language-switcher" class="hidden" onclick="switchLanguage()">Switch Language</button>
+
       <div class="story-data">
-      <!-- Story data will be displayed here -->
+        <!-- Story data will be displayed here -->
       </div>
     
       <div class="like-button-container hidden">

@@ -17,41 +17,42 @@ window.addEventListener('DOMContentLoaded', () => {
             document.querySelector(".like-button").disabled = false;
 
             if (storyData.success) {
-                const { story_name, author_name, story_text, images, likes, comments } = storyData;
-              
-                let imagesHTML = '';
-                if (images.length) {
-                  imagesHTML = '<h3>Images:</h3>';
-                  images.forEach(image => {
-                    imagesHTML += `<img src="${image}" alt="Story image">`;
-                  });
-                }
-              
-                storyDataContainer.innerHTML = `
-                  <h2>${story_name}</h2>
-                  <h3>by ${author_name}</h3>
-                  <p>${nl2br(story_text)}</p>
-                  ${imagesHTML}
-                `;
-                document.getElementById("like-count").textContent = likes;
-                document.getElementById("like-count").setAttribute("data-story-id", id);
-              
-                const commentsList = document.getElementById("comments-list");
-                commentsList.innerHTML = "";
-                comments.forEach(comment => {
-                  const commentElement = document.createElement("div");
-                  commentElement.className = "comment";
-                  commentElement.textContent = comment.comment_text;
-                  commentsList.appendChild(commentElement);
-                });
-              } else {
-                storyDataContainer.innerHTML = '<p>Error loading story.</p>';
-              }
-              
+              const { story_name, author_name, story_text, translation_text, images, likes, comments, story_language, translation_language } = storyData;
 
-            document.querySelector(".like-button-container").classList.remove("hidden");
-            document.querySelector(".comment-section").classList.remove("hidden");
-            
+              let imagesHTML = '';
+              if (images.length) {
+                imagesHTML = '<h3>Images:</h3>';
+                images.forEach(image => {
+                  imagesHTML += `<img src="${image}" alt="Story image">`;
+                });
+              }
+
+              storyDataContainer.innerHTML = `
+                <h2>${story_name}</h2>
+                <h3>by ${author_name}</h3>
+                ${imagesHTML}
+                <p>${nl2br(story_text)}</p>
+              `;
+
+              storyDataContainer.setAttribute('data-original-text', storyDataContainer.innerHTML);
+
+              if (translation_text) {
+                storyDataContainer.setAttribute(
+                    'data-translated-text',
+                    `<h2>${story_name}</h2><h3>by ${author_name}</h3><p>${nl2br(translation_text)}</p>${imagesHTML}`
+                );
+                console.log('Translation text:', nl2br(translation_text)); // Add this line
+                storyDataContainer.setAttribute('data-original-language', story_language);
+                storyDataContainer.setAttribute('data-translation-language', translation_language);
+                document.querySelector('#language-switcher').textContent = translation_language; // Corrected this line
+                document.querySelector('#language-switcher').classList.remove('hidden');
+              } else {
+                  storyDataContainer.removeAttribute('data-translated-text');
+                  document.querySelector('#language-switcher').classList.add('hidden');
+              }
+              document.querySelector(".like-button-container").classList.remove("hidden");
+              document.querySelector(".comment-section").classList.remove("hidden");
+            }
         });
     });
 
@@ -116,3 +117,21 @@ async function submitComment(storyId, commentText) {
   return data.success;
 }
 
+function switchLanguage() {
+  const storyData = document.querySelector('.story-data');
+  const originalText = storyData.getAttribute('data-original-text');
+  const translatedText = storyData.getAttribute('data-translated-text');
+  const currentText = storyData.innerHTML;
+
+  const originalLanguage = storyData.getAttribute('data-original-language');
+  const translationLanguage = storyData.getAttribute('data-translation-language');
+  const languageSwitcher = document.querySelector('#language-switcher');
+
+  if (currentText === originalText) {
+      storyData.innerHTML = translatedText;
+      languageSwitcher.textContent = originalLanguage;
+  } else {
+      storyData.innerHTML = originalText;
+      languageSwitcher.textContent = translationLanguage;
+  }
+}
