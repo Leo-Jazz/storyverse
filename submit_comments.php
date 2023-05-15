@@ -7,13 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = isset($_POST["comment"]) ? $_POST["comment"] : null;
     $likes = isset($_POST["likes"]) ? $_POST["likes"] : null;
 
-
     if (!isset($_POST["storyId"]) || empty($_POST["storyId"])) {
         echo json_encode(['success' => false, 'error' => 'Story ID not provided.']);
         exit;
     }
     
-
     if ($likes !== null) {
         // Update likes in the database
         $sql = "UPDATE stories SET likes = likes + 1 WHERE id = ?";
@@ -23,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->close();
     }
     
-
     if ($comment !== null) {
         // Insert comment into the database
         $sql = "INSERT INTO comments (story_id, comment_text) VALUES (?, ?)";
