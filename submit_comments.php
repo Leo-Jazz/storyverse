@@ -5,7 +5,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $storyId = $_POST["storyId"];
     $likes = isset($_POST["likes"]) ? $_POST["likes"] : null;
     $comment = isset($_POST["comment"]) ? $_POST["comment"] : null;
-    $likes = isset($_POST["likes"]) ? $_POST["likes"] : null;
 
     if (!isset($_POST["storyId"]) || empty($_POST["storyId"])) {
         echo json_encode(['success' => false, 'error' => 'Story ID not provided.']);
@@ -14,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if ($likes !== null) {
         // Update likes in the database
-        $sql = "UPDATE stories SET likes = likes + 1 WHERE id = ?";
+        $sql = "UPDATE stories SET likes = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("i", $storyId);
+        $stmt->bind_param("ii", $likes, $storyId);
         $stmt->execute();
         $stmt->close();
     }
@@ -29,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo json_encode(['success' => false, 'error' => 'Error preparing statement: ' . $conn->error]);
             exit;
         }
+        $comment = urldecode($comment);
         $stmt->bind_param("is", $storyId, $comment);
         if ($stmt->execute() === false) {
             $error = $stmt->error; // Store the error message before closing the statement

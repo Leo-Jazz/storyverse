@@ -17,6 +17,12 @@ if ($result->num_rows > 0) {
 }
 ?>
 
+<!-- add an image upload button -->
+<form action="upload_image.php" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" id="image">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
